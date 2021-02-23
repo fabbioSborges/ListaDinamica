@@ -19,3 +19,5 @@ int ListaVazia(TListaDinamica *lista);
 int InserirPrimeiraPosicao(TListaDinamica *lista, TInfo info);
 void imprimirLista(TListaDinamica *lista);
 int InserirUltimaPosicao(TListaDinamica *lista, TInfo info);
+int RemovePrimeiro(TListaDinamica *lista);
+int RemoveUltimo(TListaDinamica *lista);

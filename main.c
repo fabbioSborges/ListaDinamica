@@ -20,7 +20,24 @@ int main(void) {
   aluno.media = 9.5;
   //InserirPrimeiraPosicao(minhaLista, aluno);
   InserirUltimaPosicao(minhaLista, aluno);
-    
+
+  //Inserir  novo elemento
+  aluno.matricula = 7;
+  aluno.media = 9;
+  //InserirPrimeiraPosicao(minhaLista, aluno);
+  InserirUltimaPosicao(minhaLista, aluno);  
+
   imprimirLista(minhaLista);
+
+  printf("\n\n-------Remoção-------\n\n");
+  /*RemovePrimeiro(minhaLista);
+  RemovePrimeiro(minhaLista);
+  RemovePrimeiro(minhaLista);*/
+  RemoveUltimo(minhaLista);
+  RemoveUltimo(minhaLista);
+  RemoveUltimo(minhaLista);
+
+  imprimirLista(minhaLista);
+
   return 0;
 }

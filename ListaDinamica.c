@@ -76,3 +76,45 @@ int InserirUltimaPosicao(TListaDinamica *lista, TInfo info){
   lista->tamanho++;
   return 1;
 }
+
+int RemovePrimeiro(TListaDinamica *lista){
+  if(ListaVazia(lista)){
+    return 0;
+  }
+  TElem *noRemove;
+  noRemove = lista->prim;
+  //lista->prim = lista->prim->prox;
+  lista->prim = noRemove->prox;
+  //remover uma lista com somente um elemento
+  if(lista->prim == NULL){
+    lista->ultimo = NULL;
+  }
+  lista->tamanho--;
+  free(noRemove);
+  return 1;
+}
+
+int RemoveUltimo(TListaDinamica *lista){
+  if(ListaVazia(lista)){
+    return 0;
+  }
+  TElem *noRemove = lista->prim;
+  TElem *noAnt;
+  
+  // remover lista com somsnete um elemento
+  if(lista->prim->prox == NULL){
+    lista->prim = noRemove->prox;
+    lista->ultimo = noRemove->prox;
+    free(noRemove);
+    return 1;
+  }
+
+  while(noRemove->prox != NULL){
+    noAnt = noRemove;
+    noRemove = noRemove->prox;
+  }
+  noAnt->prox = noRemove->prox;
+  lista->ultimo = noAnt;
+  free(noRemove);
+  return 1;
+}
